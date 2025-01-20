@@ -13,7 +13,7 @@ ci sono alcune dipendenze da installare, tipo sqlite
         npm install electron --save-dev
     ```
 - installa le dip
-      ```bash
+        ```
         npm install sqlite3
         ```
 anche altre ma non me le ricordo
