@@ -1,0 +1,48 @@
+https://chatgpt.com/c/678d816e-190c-800a-b4a4-0cd74efad10a
+----------------------------------------------------------
+design organizzazione e salvataggio dati
+-----
+
+- 1 DB per ogni categoria e per Cast Members, Props, scene, set, sinossi, script day con i seguenti campi-> ID, nome, occurence. (questo ci serve a fare l'autocomplete e a non mettere le cose 800 volte. se ho una pistola, è sempre quella)
+
+
+- ogni SHEET ha il suo file JSON -> 
+{
+  "sheet": ,
+  "scene": "",
+  "set": "",
+  "script_page": "",
+  "day_night": "",
+  "int_ext": "",
+  "synopsis": "",
+  "script_day": "",
+  "length": {
+    "whole_page": 0,
+    "fractional_page": 0
+  },
+  "categories": {
+      "cast_members": [],
+      "background_actors": [],
+      "stunts": [],
+      "vehicles": [],
+      "props": [],
+      "camera": [],
+      "sfx": [],
+      "wardrobe": [],
+      "muh": [],
+      "animals": [],
+      "sound": [],
+      "art_department": [],
+      "set_dressing": [],
+      "greenery": [],
+      "special_equipment": [],
+      "security": [],
+      "additional_labor": [],
+      "vfx": [],
+      "mechanical_fx": [],
+      "miscellaneous": [],
+      "notes": []
+  },
+
+  "log": "New Element \"X\" has been added to category \"Y\"."
+}

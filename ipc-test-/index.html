@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-16" />
+        <title>Electron boilerplate</title>
+        <link rel="stylesheet" href="index.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="src/incremetCount.js"></script>
+        <script src="src/version.js"></script>
+        <script src="src/not_async.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1 id="async">Dev not clicked</h1>
+
+            </header>
+            <section class="main"></section>
+            <footer></footer>
+        </div>
+        <h1 id="counter">Count: 0</h1>
+        <button class="button-30" role="button" onclick="incrementCount()">Incrementa</button>
+
+        <button class="button-30" role="button" onclick="get_Version()">Get verzionen</button>
+        <h1 id="verzionen">0</h1>
+
+        <button class="button-30" role="button" onclick="isDev()">isDev?</button>
+
+        <script>
+            window.api.greet("tao");
+
+            //quello che c'è nella funzione version.js potrebbe essere qui - same for inc count
+        </script>
+    </body>
+</html>

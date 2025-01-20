@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Movie Production Scheduler Menu</title>
+
+        <script src="script_nostri/tests.js"></script>
+        <script src="script_nostri/dbConnect.js"></script>
+
+        <link rel="stylesheet" href="css_nostro/style_menu.css" />
+    </head>
+    <body>
+        <div class="menu-bar">
+            <div class="menu-item">File</div>
+            <div class="menu-item" id="new_proj">New</div>
+            <div class="menu-item">Edit</div>
+            <div class="menu-item">Breakdown</div>
+            <div class="menu-item">Schedule</div>
+            <div class="menu-item">Design</div>
+            <div class="menu-item">Actions</div>
+            <div class="menu-item">Window</div>
+            <div class="menu-item">Help</div>
+        </div>
+
+        <div class="toolbar">
+            <div class="menu-icons">
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png"
+                    alt="New"
+                    title="New"
+                />
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png"
+                    alt="Open"
+                    title="Open"
+                />
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png"
+                    alt="Save"
+                    title="Save"
+                />
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/159/159604.png"
+                    alt="Print"
+                    title="Print"
+                />
+            </div>
+            <button onclick="showSheetInterface()">Add Sheet</button>
+            <button>Elements</button>
+            <button>Calendars</button>
+            <button>Close All</button>
+        </div>
+
+        <div id="sheet-interface">
+            <h2>New Sheet</h2>
+            <label for="scene">Scene:</label>
+            <input type="text" id="scene" placeholder="Scene number" />
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" placeholder="Location" />
+
+            <label for="synopsis">Synopsis:</label>
+            <textarea
+                id="synopsis"
+                placeholder="Write a short synopsis..."
+            ></textarea>
+
+            <button onclick="saveSheet()">Save</button>
+        </div>
+    </body>
+</html>

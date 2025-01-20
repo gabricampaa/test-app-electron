@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Movie Production Scheduling - Project Name</title>
+        <link rel="stylesheet" href="css_nostro/gui.css" />
+        <script src="../script_nostri/tests.js"></script>
+        <script src="../script_nostri/change_sheet.js"></script>
+
+    </head>
+    <body>
+        <div class="toolbar">
+            <button>New Project</button>
+            <button>Open Project</button>
+
+            <button onclick="saveSheet()">Save Project</button>
+            <button onclick="newProjo()">Creater Project</button>
+
+            <button>Sheets</button>
+            <button>Elements</button>
+            <button>Calendars</button>
+            <button>Close All</button>
+            <button>Help</button>
+        </div>
+
+        <div class="content">
+
+                      <h3 id="sheetNumberInfo">Sheet 1
+                        <span class="arrow" id="leftArrow" onclick="changeSheet(-1)" style="cursor: pointer;">&#8592;</span> <!-- Left Arrow -->
+                        <span class="arrow" onclick="changeSheet(1)" style="cursor: pointer;">&#8594;</span> <!-- Right Arrow -->
+                      </h3>
+
+
+            <div class="section">
+                <div class="input-group">
+                    <label>Scene(s):</label>
+                    <input id="scene" type="text" value="" />
+                </div>
+                <div class="input-group">
+                    <label>Int/Ext:</label>
+                    <select>
+                        <option selected></option>
+                        <option>INT</option>
+                        <option>EXT</option>
+                        <option>INT./EXT.</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Set:</label>
+                    <input type="text" value="" id="set" />
+                </div>
+                <div class="input-group">
+                    <label>Synopsis:</label>
+                    <input type="text" value="" id="synopsis" />
+                </div>
+                <div class="input-group">
+                    <label>Script Page(s):</label>
+                    <input type="text" value="" />
+                </div>
+                <div class="input-group">
+                    <label>Script Day:</label>
+                    <input type="text" value="" />
+                </div>
+                <div class="input-group">
+                    <label>Day/Night:</label>
+                    <select>
+                        <option selected></option>
+                        <option>Day</option>
+                        <option>Night</option>
+                    </select>
+                </div>
+                <div class="input-group-short">
+                    <label>Lenght: </label>
+                    <input type="text" value="" />
+                    <select>
+                        <option selected>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                    </select>
+                    <h5>/8</h5>
+                </div>
+            </div>
+
+
+            <hr style="border: none; height: 5px; background-color: gray; width: 100%; margin: 20px auto;">
+
+            <div class="section elements-container">
+                <div>
+                    <h5>Cast Members</h5>
+                    <h5>Background Actors</h4>
+                    <h5>Stunts</h5>
+                    <h5>Veichles</h5>
+                    <h5>Props</h5>
+                    <h5>Camera</h5>
+                    <h5>SFX</h5>
+                    <h5>Wardrobe</h5>
+                    <h5>MUH</h5>
+                    <h5>Animals</h5>
+                   <i> <h5 id="test-item">CLICCAMI PER FUNZIONE ADD</h5></i>
+        <div id="input-container">
+            <input
+                type="text"
+                id="test-input"
+                placeholder="Enter cast member name"
+            />
+        </div>
+            </div>
+                <div>
+                    <h5>Sound</h5>
+                    <h5>Art department</h5>
+                    <h5>Set dressing</h5>
+                    <h5>Greenery</h5>
+                    <h5>Special equipment</h5>
+                    <h5>Security</h5>
+                    <h5>Additional Labor</h5>
+                    <h5>VFX</h5>
+                    <h5>Mechanical FX</h5>
+                    <h5>Miscellaneous</h5>
+                    <h5>Notes</h5>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <script>
+            const castItem = document.getElementById("test-item");
+            const inputContainer = document.getElementById("input-container");
+            const castInput = document.getElementById("test-input");
+
+            castItem.addEventListener("click", () => {
+                inputContainer.style.display = "block";
+                castInput.focus();
+            });
+
+            castInput.addEventListener("keypress", (event) => {
+                if (event.key === "Enter" && castInput.value.trim() !== "") {
+                    const subList =
+                        castItem.querySelector("ul") ||
+                        document.createElement("ul");
+                    const newListItem = document.createElement("li");
+                    newListItem.textContent = castInput.value.trim();
+                    subList.appendChild(newListItem);
+                    castItem.appendChild(subList);
+                    castInput.value = "";
+                    inputContainer.style.display = "none";
+                }
+            });
+
+            // Optional: Hide the input field if clicked outside
+            document.addEventListener("click", (event) => {
+                if (
+                    !inputContainer.contains(event.target) &&
+                    event.target !== castItem
+                ) {
+                    inputContainer.style.display = "none";
+                }
+            });
+        </script>
+
+        <div class="status-bar">
+            New Element "X" has been added to category "Y".
+        </div>
+    </body>
+</html>

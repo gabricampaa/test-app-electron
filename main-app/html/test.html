@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Expandable Text Items</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            .item {
+                cursor: pointer;
+                margin-bottom: 10px;
+                padding: 10px;
+                background-color: #f0f0f0;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+                position: relative;
+            }
+            .item:hover {
+                background-color: #e0e0e0;
+            }
+            .subtext {
+                font-size: 0.9em;
+                color: #555;
+                margin-top: 5px;
+                padding-left: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+
+        <script>
+            document.querySelectorAll(".item").forEach((item) => {
+                item.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    const subtext = item.querySelector(".subtext");
+                    if (subtext) {
+                        subtext.remove();
+                    } else {
+                        const newSubtext = document.createElement("div");
+                        newSubtext.className = "subtext";
+                        newSubtext.textContent = "Additional information";
+                        item.appendChild(newSubtext);
+                    }
+                });
+            });
+        </script>
+
+        <style>
+            #input-container {
+                display: none;
+                margin-left: 20px;
+            }
+        </style>
+        <li id="cast-item">Cast Members</li>
+        <div id="input-container">
+            <input
+                type="text"
+                id="cast-input"
+                placeholder="Enter cast member name"
+            />
+        </div>
+
+        <script>
+            const castItem = document.getElementById("cast-item");
+            const inputContainer = document.getElementById("input-container");
+            const castInput = document.getElementById("cast-input");
+
+            castItem.addEventListener("click", () => {
+                inputContainer.style.display = "block";
+                castInput.focus();
+            });
+
+            castInput.addEventListener("keypress", (event) => {
+                if (event.key === "Enter" && castInput.value.trim() !== "") {
+                    const subList =
+                        castItem.querySelector("ul") ||
+                        document.createElement("ul");
+                    const newListItem = document.createElement("li");
+                    newListItem.textContent = castInput.value.trim();
+                    subList.appendChild(newListItem);
+                    castItem.appendChild(subList);
+                    castInput.value = "";
+                    inputContainer.style.display = "none";
+                }
+            });
+
+            // Optional: Hide the input field if clicked outside
+            document.addEventListener("click", (event) => {
+                if (
+                    !inputContainer.contains(event.target) &&
+                    event.target !== castItem
+                ) {
+                    inputContainer.style.display = "none";
+                }
+            });
+        </script>
+    </body>
+</html>

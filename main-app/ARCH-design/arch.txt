@@ -1,0 +1,11 @@
+Electron
+
+noi abbiamo tabella master, con tutti le varie sezioni, e poi altra tabella con info scena per scena
+
+postgreSQL
+
+----------------------
+link utili 
+
+- https://www.freecodecamp.org/news/an-introduction-to-software-architecture-patterns/
+- https://www.geeksforgeeks.org/types-of-software-architecture-patterns/

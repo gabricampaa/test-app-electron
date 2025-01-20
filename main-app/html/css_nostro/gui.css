@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.toolbar {
+    display: flex;
+    background-color: #e0e0e0;
+    padding: 5px;
+    align-items: center;
+}
+.toolbar button {
+    margin-right: 5px;
+    padding: 5px 10px;
+}
+.content {
+    padding: 10px;
+}
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.input-group {
+    margin-bottom: 5px;
+    flex: 1 1 45%; /* Ogni input occupa circa metà riga */
+    display: flex;
+    align-items: center;
+}
+.input-group label {
+    display: inline-block;
+    width: 150px;
+    width: 120px;
+    margin-right: 10px;
+}
+.input-group input,
+.input-group select {
+    width: 200px;
+    flex: 1;
+}
+.elements-container {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ccc; /* Linea superiore generale */
+    gap: 5px;
+}
+.elements-container div {
+    width: 45%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    word-wrap: break-word; /* Alternativa: overflow-wrap: break-word; */
+}
+
+.status-bar {
+    background-color: #e0e0e0;
+    padding: 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#hidden-item {
+    display: none;
+}
+
+#input-container {
+    display: none;
+    margin-left: 35px;
+}
+
+li {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.input-group-short {
+    display: flex;
+    align-items: center;
+}
+
+.input-group-short select,
+.input-group-short input {
+    width: 50px;
+    margin-right: 5px;
+}
+
+.input-group-short h5 {
+    margin: 0;
+}
+
+.elements-container h5 {
+    margin: 4px 0; /* Riduce lo spazio tra i titoli */
+    padding-bottom: 4px;
+    border-bottom: 1px solid #ccc; /* Linea grigia sottile */
+}
+
+.elements-container div {
+    margin-right: 10px; /* Spazio tra le due colonne */
+}
+
+.arrow {
+    font-size: 48px;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+}
+.arrow:hover {
+    color: gray;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Toolbar</title>
+    <link rel="stylesheet" href="css_nostro/splash.css" />
+
+</head>
+<body>
+    <div class="toolbar">
+        <button id="new-project">New Project</button>
+        <button id="open-project">Open Project</button>
+        <div class="separator"></div>
+        <div class="recent-projects">Recent Projects:</div>
+        <ul id="recent-list">
+            <li>Project 1</li>
+            <li>Project 2</li>
+            <li>Project 3</li>
+        </ul>
+        <button class="continue-btn" onclick="openMain()">Continue</button>
+    </div>
+
+    <script>
+      function openMain(){
+        window.electronAPI.openMainWindow();
+      };
+    </script>
+</body>
+</html>
